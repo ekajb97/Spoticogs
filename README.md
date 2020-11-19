@@ -1,5 +1,4 @@
 # Getting Started with Create React App
-# for the love of several dogs
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
