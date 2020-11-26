@@ -1,16 +1,19 @@
 import './App.css';
-import discogsTest from './components/discogs/test';
+import Disco from './components/discogs/test';
+import SpotifyMisc from './components/spotify/SpotifyMisc';
 
 function App() {
   return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Spoticogs</h1>
-        </header>
-        <div>
-          <p>test</p>
-        </div>
+    <div className="App">
+      <header className="App-header">
+        <h1>Spoticogs</h1>
+      </header>
+      <div>
+        <SpotifyMisc />
+        <Disco />
+        <p>Would you like fries with that?</p>
       </div>
+    </div >
   );
 }
 
