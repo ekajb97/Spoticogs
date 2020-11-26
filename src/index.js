@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import test from './components/discogs/test';
+import SpotifyMisc from "./components/spotify/SpotifyMisc";
+
+
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <test />
   </React.StrictMode>,
   document.getElementById('root')
 );
