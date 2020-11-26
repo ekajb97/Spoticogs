@@ -1,7 +1,11 @@
 import React from 'react';
+import Discogs from disconnect;
 
+var whoDis = new Discogs({
+    consumerKey: '<>',
+    consumerSecret: '<>'
+});
 
-/*
 class Disco extends React.Component {
     render() {
         return (
@@ -12,10 +16,16 @@ class Disco extends React.Component {
     }
 }
 
-default export Disco;
-*/
+export default Disco;
+
+function searchDisc() {
+
+    // https://www.discogs.com/developers/#page:authentication,header:authentication-request-token-url
+
+}
 
 
+/*
 var Discogs = require('disconnect').Client;
 
 
@@ -43,3 +53,4 @@ export default class test extends React.Component {
         )
     }
 }
+*/

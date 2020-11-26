@@ -10,7 +10,7 @@ class SpotifyMisc extends React.Component {
 	render() {
 		return (
 			<div>
-				<button onClick={getAuth}>I'm Spotify</button>
+				<button onClick={getSpotAuth}>I'm Spotify</button>
 			</div>
 		);
 	}
@@ -19,27 +19,7 @@ class SpotifyMisc extends React.Component {
 export default SpotifyMisc;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const getAuth = async () => {
+export const getSpotAuth = async () => {
 	//const clientId = process.env.REACT_APP_BASIC_CLIENT_ID;
 	//const clientSecret = process.env.REACT_APP_BASIC_CLIENT_SECRET;
 	const clientId = '9e3ee580c9d44f7d805d8fc1fb45a6a4';

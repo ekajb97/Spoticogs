@@ -1,3 +1,7 @@
+# TODO
+
+Remove console.log from auth methods so we dont just start spitting out access tokens for people. 
+
 # Getting Started with Create React App
 # help
 
@@ -70,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-hello
+
