@@ -1,20 +1,34 @@
 import './App.css';
 import Disco from './components/discogs/test';
+import Buy from './components/discogs/buyRelease';
 import SpotifyMisc from './components/spotify/SpotifyMisc';
+import React from "react";
+import axios from "axios";
+import qs from 'qs';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Spoticogs</h1>
-      </header>
-      <div>
-        <SpotifyMisc />
-        <Disco />
-        <p>Would you like fries with that?</p>
-      </div>
-    </div >
-  );
+
+export default class App extends React.Component {
+    state = {
+        user: null,
+        error: null,
+        //authenticated:null
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <h1>Spoticogs</h1>
+                </header>
+                <div>
+                    <SpotifyMisc />
+                    <Disco />
+                    <p>Would you like fries with that?</p>
+                    <Buy />
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+
