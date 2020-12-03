@@ -1,10 +1,6 @@
 import React from 'react';
-import Discogs from disconnect;
 
-var whoDis = new Discogs({
-    consumerKey: '<>',
-    consumerSecret: '<>'
-});
+
 
 class Disco extends React.Component {
     render() {
