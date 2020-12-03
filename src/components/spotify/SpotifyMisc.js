@@ -20,25 +20,6 @@ export default SpotifyMisc;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const getAuth = async () => {
 	//const clientId = process.env.REACT_APP_BASIC_CLIENT_ID;
 	//const clientSecret = process.env.REACT_APP_BASIC_CLIENT_SECRET;
