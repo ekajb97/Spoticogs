@@ -31,7 +31,7 @@ const buyRelease = ({ album, artists, name }) => {
                     </div>
                 </form>
             </div>
-            <div>
+            <div className={"button"}>
 
                 <a href={"https://www.discogs.com/sell/list?master_id=" + id + "&ev=mb&format=" + format} >Buy Here!</a>
 

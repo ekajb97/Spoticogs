@@ -80,20 +80,49 @@ select {
     linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
-  background-position: right 20px center, right bottom, right bottom, right bottom;   
+  background-position: right 20px center, right bottom, right bottom, right bottom;
 }
 
 a:link {
   transition: all .4s ease;
-  color: rgb(255, 255, 255);
+  color: #1DB954;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1DB954;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1DB954;
+  color: black;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
+
+
+.button {
+  transition: all .4s ease;
+  font-family: 'Courier New', monospace;
+  border-radius: 5px;
+  border: 2px solid  #1DB954;
+  background-color: #000000;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px;
+  border-radius: 14px;
+}
+
+.button:hover {
+  border: 2px solid  #1DB954;
+  background-color: #ffffff;
+  color: #000000;
+}
 
