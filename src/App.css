@@ -5,11 +5,11 @@ body {
     }
 
 body {
-  background-image: linear-gradient(#ffffff, #000000);
+  background-image: linear-gradient(#a1a1a1, #000000);
 }
 
 .App {
-  margin-top: 15%;
+  margin-top: 150px;
   text-align: center;
 
 }

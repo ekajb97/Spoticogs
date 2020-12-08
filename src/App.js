@@ -5,7 +5,7 @@ import SpotifyMisc from './components/spotify/SpotifyMisc';
 import React from "react";
 import axios from "axios";
 import qs from 'qs';
-import ReactLogo from './images/logo.svg';
+import ReactLogo from './images/logo.png';
 
 
 
@@ -29,8 +29,9 @@ export default class App extends React.Component {
                     <Buy />
                 </div>
             </div>
-        );
+        ); 
     }
 }
+  
 
 
