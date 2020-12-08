@@ -8,8 +8,6 @@ import SpotifyMisc from "./components/spotify/SpotifyMisc";
 import Buy from './components/discogs/buyRelease';
 
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

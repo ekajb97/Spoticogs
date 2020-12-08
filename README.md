@@ -1,5 +1,5 @@
 # Running Spoticogs
-- Enter auth-server/app.js
+- Enter auth-server
 - Enter secret id (line 16)
 - Enter your spotify username
 - In auth server folder run 
@@ -18,6 +18,7 @@ npm start
 
 After this you will be automatically redirected to the Spoticogs homepage with
 an access token.
+
 # Spotify
 Spoticogs accesses the users Spotify information to provide a personalised experience.
 Spotify information is used to find items in Discogs relating to the users Spotify

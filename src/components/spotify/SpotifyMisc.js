@@ -1,14 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SpotifyWebApi from 'spotify-web-api-js'
+import Spotify from 'spotify-web-api-js'
 
 // Using Client Credentials Flow to Authenticate
-import axios from 'axios';
-import qs from 'qs';
 
-var Spotify = require('spotify-web-api-js');
-var s = new SpotifyWebApi();
+
+
+var spotifyApi = new Spotify();
 const clientId = '9e3ee580c9d44f7d805d8fc1fb45a6a2';
+
+
+
+class SpotifyMisc extends React.Component {
+	constructor() {
+		super();
+		const params = this.getHashParams();
+		this.state = {
+			loggedIn: params.access_token ? true : false,
+		}
+		if (params.access_token) {
+			spotifyApi.setAccessToken(params.access_token);
+		}
+	}
+	getHashParams() {
+		var hashParams = {};
+		var e, r = /([^&;=]+)=?([^&;]*)/g,
+			q = window.location.hash.substring(1);
+		while (e = r.exec(q)) {
+			hashParams[e[1]] = decodeURIComponent(e[2]);
+		}
+		return hashParams;
+	}
+
+	getMusic() {
+		spotifyApi.getMyTopTracks()
+			.then((response) => {
+				console.log(response.items);
+			})
+	}
+
+	/*
+	db.getRelease(12353785, function (err, data) {
+	console.table(data);
+	var name = data;
+	return name;
+	});
+	*/
+	render() {
+		return (
+			<div>
+				<a href={'http://localhost:8888'}>
+					<button>Login with Spotify</button>
+				</a>
+				<button onClick={this.getMusic}>Get Music</button>
+			</div>
+
+		);
+	}
+}
+
+export default SpotifyMisc;
 
 /*
 export const getSpotAuth = async () => {
@@ -44,26 +95,3 @@ export const getSpotAuth = async () => {
 	}
 };
 */
-
-function getUserStuff() {
-
-	console.log("Buenos dias muchacho! ;)");
-
-	//var list = s.getUserPlaylists('3don9cd32v213kd27wogdjbd0');
-	//console.log(list);
-
-}
-
-class SpotifyMisc extends React.Component {
-	render() {
-		return (
-			<div>
-				<a href={'http://localhost:8888'}>
-					<button>Login with Spotify</button>
-				</a>
-			</div>
-		);
-	}
-}
-
-export default SpotifyMisc;
