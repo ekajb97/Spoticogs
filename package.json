@@ -15,7 +15,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "spotify-web-api-js": "^1.5.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "cookie-parser": "^1.4.5",
+    "querystring": "~0.2.0",
+    "request": "~2.34.0"
   },
   "scripts": {
     "start": "react-scripts start",

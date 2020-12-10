@@ -7,7 +7,7 @@ import React from 'react';
     Link
 } from "react-router-dom";*/
 const buyRelease = ({ album, artists, name }) => {
-    const id = "70705";
+    const id = "1638797";
     const format = "Vinyl";
     const release = "https://www.discogs.com/sell/list?master_id=" + id + "&ev=mb&format=" + format;
 

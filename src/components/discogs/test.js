@@ -13,73 +13,38 @@ var dis3 = new Discogs('MyUserAgent/1.0', { userToken: 'emQcmnEHCrfaCCcxwTrVFhvE
 
 var db = new Discogs({ userToken: 'emQcmnEHCrfaCCcxwTrVFhvEdRckNgIfiImhaGQC' }).database();
 
-
+var id;
 
 
 class Disco extends React.Component {
 
     getDisc() {
         var searchParams = {
-            release_title: 'nevermind',
-            artist: 'nirvana'
+            release_title: 'Vulture Culture',
+            artist: 'Fangclub',
+            type: 'master'
+
 
         };
         db.search(searchParams)
             .then(function (obj) {
                 console.log(obj)
+                console.log(obj.results[0].master_id)
+                id = obj.results[0].master_id;
             });
     }
     render() {
         return (
             <div>
+                {id}
+            </div>,
+            <div>
                 <button onClick={this.getDisc}>I'm Discogs</button>
             </div>
+
         );
     }
 }
 
 export default Disco;
-/*
-function searchDisc() {
 
-    // https://www.discogs.com/developers/#page:authentication,header:authentication-request-token-url
-
-}
-/*
-db.getRelease(12353785, function (err, data) {
-    console.table(data);
-    var name = data;
-    return name;
-});
-
-db.getRelease(12353785)
-    .then(function (release) {
-        return db.getArtist(release.artists[0].id);
-    })
-    .then(function (artist) {
-        console.log(artist.name);
-    });
-    */
-
-/*
-state = {
-name: '',
-}
-
-handleChange = event => {
-this.setState({ name: event.target.value });
-}
-
-handleSubmit = event => {
-event.preventDefault();
-const user = {
-    name: this.state.name
-};
-
-axios.post(`https://api.discogs.com/oauth/access_token`, {user})
-    .then(res => {
-        console.log(res);
-        console.log(res.data);
-    })
-}
-*/
