@@ -39,13 +39,6 @@ class SpotifyMisc extends React.Component {
 			})
 	}
 
-	/*
-	db.getRelease(12353785, function (err, data) {
-	console.table(data);
-	var name = data;
-	return name;
-	});
-	*/
 	render() {
 		return (
 			<div>
