@@ -36,9 +36,6 @@ class Disco extends React.Component {
     render() {
         return (
             <div>
-                {id}
-            </div>,
-            <div>
                 <button onClick={this.getDisc}>I'm Discogs</button>
             </div>
 

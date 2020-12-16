@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import Spotify from 'spotify-web-api-js'
 
 // Using Client Credentials Flow to Authenticate
-
-
-
 var spotifyApi = new Spotify();
 const clientId = '9e3ee580c9d44f7d805d8fc1fb45a6a2';
 
