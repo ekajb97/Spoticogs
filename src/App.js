@@ -20,18 +20,18 @@ export default class App extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                <img src={ReactLogo} alt="React Logo" />
+                    <img src={ReactLogo} alt="React Logo" />
                 </header>
                 <div>
                     <SpotifyMisc />
                     <Disco />
-                    <p>Would you like fries with that?</p>
+                    <h3>Would you like fries with that?</h3>
                     <Buy />
                 </div>
             </div>
-        ); 
+        );
     }
 }
-  
+
 
 

@@ -7,7 +7,6 @@ import Spotify from 'spotify-web-api-js'
 
 
 var spotifyApi = new Spotify();
-const clientId = '9e3ee580c9d44f7d805d8fc1fb45a6a2';
 
 
 
@@ -53,38 +52,3 @@ class SpotifyMisc extends React.Component {
 }
 
 export default SpotifyMisc;
-
-/*
-export const getSpotAuth = async () => {
-	//const clientId = process.env.REACT_APP_BASIC_CLIENT_ID;
-	//const clientSecret = process.env.REACT_APP_BASIC_CLIENT_SECRET;
-
-	const clientSecret = '62ea3d21b713498f9f255207e9b28cb2';
-
-	const headers = {
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/x-www-form-urlencoded',
-		},
-		auth: {
-			username: clientId,
-			password: clientSecret,
-		},
-	};
-	const data = {
-		grant_type: 'client_credentials',
-	};
-
-	try {
-		const response = await axios.post(
-			'https://accounts.spotify.com/api/token',
-			qs.stringify(data),
-			headers
-		);
-		console.log("Access Token: " + response.data.access_token);
-		return response.data.access_token;
-	} catch (error) {
-		console.log(error);
-	}
-};
-*/
