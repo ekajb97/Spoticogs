@@ -6,6 +6,7 @@ import Spotify from 'spotify-web-api-js';
 var spotifyApi = new Spotify();
 
 class SpotifyMisc extends React.Component {
+
 	constructor() {
 		super();
 		const params = this.getHashParams();
@@ -45,6 +46,7 @@ class SpotifyMisc extends React.Component {
 	//		});
 	//}
 
+
 	render() {
 		return (
 			<div>
@@ -52,6 +54,8 @@ class SpotifyMisc extends React.Component {
 					<button>Login with Spotify</button>
 				</a>
 			</div>
+
+
 
 		);
 	}
