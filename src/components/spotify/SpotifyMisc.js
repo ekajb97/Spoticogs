@@ -1,24 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Spotify from 'spotify-web-api-js'
+import Spotify from 'spotify-web-api-js';
 
 // Using Client Credentials Flow to Authenticate
-
-
-
 var spotifyApi = new Spotify();
-
-
 
 class SpotifyMisc extends React.Component {
 	constructor() {
 		super();
 		const params = this.getHashParams();
+		var music = new Array(20);
 		this.state = {
 			loggedIn: params.access_token ? true : false,
 		}
 		if (params.access_token) {
 			spotifyApi.setAccessToken(params.access_token);
+			spotifyApi.getMyTopTracks().then((response) => {
+				for (var i = 0; i < response.items.length; i++) {
+					music[i] = response.items[i];
+				}
+			});
+			console.log("The Music: ");
+			console.log(music)
 		}
 	}
 	getHashParams() {
@@ -31,12 +34,16 @@ class SpotifyMisc extends React.Component {
 		return hashParams;
 	}
 
-	getMusic() {
-		spotifyApi.getMyTopTracks()
-			.then((response) => {
-				console.log(response.items);
-			})
-	}
+	//getMusic() {
+	//	var musicDetails = [];
+	//	spotifyApi.getMyTopTracks()
+	//		.then((response) => {
+	//			//filter and call in here?
+	//			console.log("Inside Method: ");
+	//			console.log(response.items);
+	//			return response.items;
+	//		});
+	//}
 
 	render() {
 		return (
@@ -44,7 +51,6 @@ class SpotifyMisc extends React.Component {
 				<a href={'http://localhost:8888'}>
 					<button>Login with Spotify</button>
 				</a>
-				<button onClick={this.getMusic}>Get Music</button>
 			</div>
 
 		);
