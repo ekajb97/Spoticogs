@@ -10,7 +10,7 @@ class SpotifyMisc extends React.Component {
 	constructor() {
 		super();
 		const params = this.getHashParams();
-		var music = new Array(20);
+		var music = {};
 		this.state = {
 			loggedIn: params.access_token ? true : false,
 		}
@@ -18,7 +18,13 @@ class SpotifyMisc extends React.Component {
 			spotifyApi.setAccessToken(params.access_token);
 			spotifyApi.getMyTopTracks().then((response) => {
 				for (var i = 0; i < response.items.length; i++) {
-					music[i] = response.items[i];
+					var song_info = {
+						song: response.items[i].name,
+						artist: response.items[i].artists[0].name,
+						album_name: response.items[i].album.name,
+						album_art: response.items[i].album.images
+					}
+					music[i] = song_info;
 				}
 			});
 			console.log("The Music: ");
