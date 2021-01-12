@@ -22,7 +22,7 @@ class SpotifyMisc extends React.Component {
 						song: response.items[i].name,
 						artist: response.items[i].artists[0].name,
 						album_name: response.items[i].album.name,
-						album_art: response.items[i].album.images
+						album_art: response.items[i].album.images[0]
 					}
 					music[i] = song_info;
 				}

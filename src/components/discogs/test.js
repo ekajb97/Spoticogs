@@ -21,7 +21,7 @@ class Disco extends React.Component {
             .then(function (obj) {
                 console.log(obj)
                 console.log("Discogs master ID needed for Marketplace Search: " + obj.results[0].master_id)
-                id = obj.results[0].master_id;
+                var id = obj.results[0].master_id;
             });
     }
     render() {
