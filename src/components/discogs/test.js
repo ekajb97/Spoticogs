@@ -1,10 +1,10 @@
 import React from 'react';
 
-var Discogs = require('disconnect').Client;
+
 
 
 // Authenticate by user token
-
+var Discogs = require('disconnect').Client;
 var db = new Discogs({ userToken: 'emQcmnEHCrfaCCcxwTrVFhvEdRckNgIfiImhaGQC' }).database();
 
 class Disco extends React.Component {
