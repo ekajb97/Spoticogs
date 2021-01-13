@@ -1,5 +1,4 @@
 import React from 'react';
-import Details from '../spotify/SpotifyMisc';
 /*import {
     BrowserRouter as Router,
     NavLink,

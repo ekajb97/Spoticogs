@@ -10,25 +10,12 @@ class SpotifyMisc extends React.Component {
 	constructor() {
 		super();
 		const params = this.getHashParams();
-		var music = {};
 		this.state = {
 			loggedIn: params.access_token ? true : false,
+			music: { name: 'notchecked' }
 		}
 		if (params.access_token) {
 			spotifyApi.setAccessToken(params.access_token);
-			spotifyApi.getMyTopTracks().then((response) => {
-				for (var i = 0; i < response.items.length; i++) {
-					var song_info = {
-						song: response.items[i].name,
-						artist: response.items[i].artists[0].name,
-						album_name: response.items[i].album.name,
-						album_art: response.items[i].album.images[0]
-					}
-					music[i] = song_info;
-				}
-			});
-			console.log("The Music: ");
-			console.log(music)
 		}
 	}
 	getHashParams() {
@@ -41,24 +28,35 @@ class SpotifyMisc extends React.Component {
 		return hashParams;
 	}
 
-	//getMusic() {
-	//	var musicDetails = [];
-	//	spotifyApi.getMyTopTracks()
-	//		.then((response) => {
-	//			//filter and call in here?
-	//			console.log("Inside Method: ");
-	//			console.log(response.items);
-	//			return response.items;
-	//		});
-	//}
+	getTracks() {
+		spotifyApi.getMyTopTracks().then((response) => {
+			this.setState({
+				music: {
+					name: response.items[0].name
+				}
+			});
 
+			//for (var i = 0; i < response.items.length; i++) {
+			//	var song_info = {
+			//		song: response.items[i].name,
+			//		artist: response.items[i].artists[0].name,
+			//		album_name: response.items[i].album.name,
+			//		album_art: response.items[i].album.images[0]
+			//	}
+			//	music[i] = song_info;
+			//}
+
+		});
+	}
 
 	render() {
 		return (
 			<div>
 				<a href={'http://localhost:8888'}>
-					<button>Login with Spotify</button>
+					<button>Connect to Spotify</button>
 				</a>
+				<div>Track: {this.state.music.name}</div>
+				<button onClick={this.getTracks()}>Get Music Returns</button>
 			</div>
 
 
