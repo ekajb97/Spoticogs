@@ -76,7 +76,7 @@ class SpotifyMisc extends React.Component {
 					{this.state.music.map(function (d, idx) {
 						return (
 						<tr>
-							<td key={idx}>{idx}</td>
+							<td key={idx}>{idx+1}</td>
 							<td key={idx}>
 								<img height={100} width={100}
 									 src={d.image}
