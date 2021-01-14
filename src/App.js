@@ -1,6 +1,4 @@
 import './App.css';
-import Disco from './components/discogs/test';
-import Buy from './components/discogs/buyRelease';
 import SpotifyMisc from './components/spotify/SpotifyMisc';
 import React from "react";
 import axios from "axios";
@@ -26,8 +24,7 @@ export default class App extends React.Component {
                 </header>
                 <div>
                     <SpotifyMisc />
-                    <Disco />
-                    <Buy />
+
                 </div>
             </div>
         );

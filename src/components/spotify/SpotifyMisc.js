@@ -3,8 +3,15 @@ import Spotify from 'spotify-web-api-js';
 
 // Using Client Credentials Flow to Authenticate
 var spotifyApi = new Spotify();
+var Discogs = require('disconnect').Client;
+var db = new Discogs({ userToken: 'emQcmnEHCrfaCCcxwTrVFhvEdRckNgIfiImhaGQC' }).database();
+
+function getDisc() {
+
+}
 
 class SpotifyMisc extends React.Component {
+	getDisc;
 
 	constructor() {
 		super();
@@ -51,6 +58,7 @@ class SpotifyMisc extends React.Component {
 
 	render() {
 		return (
+
 			<div>
 				<a href={'http://localhost:8888'}>
 					<button>Connect to Spotify</button>
