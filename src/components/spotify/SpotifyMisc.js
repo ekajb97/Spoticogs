@@ -78,7 +78,8 @@ class SpotifyMisc extends React.Component {
 						<tr>
 							<td key={idx}>{idx+1}</td>
 							<td key={idx}>
-								<img height={100} width={100}
+								<img id={"art"}
+									 height={100} width={100}
 									 src={d.image}
 									 alt={d.album}>
 								</img>

@@ -136,15 +136,15 @@ table, th, td {
   background-color: #000000;
   color: white;
   font-family: 'Courier New', monospace;
-  
+
 }
 table {
   border: 3px solid black;
   border-collapse: collapse;
   height: 50%;
   overflow:auto;
-  margin-top:  20px; 
-  display: inline-block; 
+  margin-top:  20px;
+  display: inline-block;
   overflow: auto;
 }
 
@@ -177,6 +177,10 @@ th {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1DB954; 
+  background: #1DB954;
   border-radius: 10px;
+}
+
+#art {
+  border: 2px solid #1DB954;
 }
