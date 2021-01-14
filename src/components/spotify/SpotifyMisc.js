@@ -59,8 +59,19 @@ class SpotifyMisc extends React.Component {
 					<button>Connect to Spotify</button>
 				</a>
 				<div>
-					<table>{this.state.music.map(function (d, idx) {
-						return (<tr>
+					<table align="center" class="scrollt">
+						<tr >
+							<th>#</th>
+							<th>Image</th>
+							<th>Track</th>
+							<th>Artist</th>
+							<th>Album</th>
+							<th>Buy</th>
+						</tr>
+					{this.state.music.map(function (d, idx) {
+						return (
+						<tr>
+							<td key={idx}>{idx}</td>
 							<td key={idx}>
 								<img height={100} width={100}
 									 src={d.image}
