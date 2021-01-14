@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Spotify from 'spotify-web-api-js';
 
 // Using Client Credentials Flow to Authenticate
@@ -12,12 +11,34 @@ class SpotifyMisc extends React.Component {
 		const params = this.getHashParams();
 		this.state = {
 			loggedIn: params.access_token ? true : false,
-			music: { name: 'notchecked' }
+			music: []
+			//{ song: "", artist: "", album: "", link: "", image: "" }
 		}
-		if (params.access_token) {
+		if (this.state.loggedIn === true) {
 			spotifyApi.setAccessToken(params.access_token);
 		}
 	}
+
+	componentDidMount() {
+		spotifyApi.getMyTopTracks().then((response) => {
+			for (var i = 0; i < response.items.length; i++) {
+				this.setState(
+					{
+						music: [...this.state.music,
+						{
+							image: response.items[i].album.images[0].url,
+							song: response.items[i].name,
+							artist: response.items[i].artists[0].name,
+							album: response.items[i].album.name,
+							link: ""
+						}]
+					}
+				)
+			}
+		});
+
+	}
+
 	getHashParams() {
 		var hashParams = {};
 		var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -28,39 +49,24 @@ class SpotifyMisc extends React.Component {
 		return hashParams;
 	}
 
-	getTracks() {
-		spotifyApi.getMyTopTracks().then((response) => {
-			this.setState({
-				music: {
-					name: response.items[0].name
-				}
-			});
-
-			//for (var i = 0; i < response.items.length; i++) {
-			//	var song_info = {
-			//		song: response.items[i].name,
-			//		artist: response.items[i].artists[0].name,
-			//		album_name: response.items[i].album.name,
-			//		album_art: response.items[i].album.images[0]
-			//	}
-			//	music[i] = song_info;
-			//}
-
-		});
-	}
-
 	render() {
 		return (
 			<div>
 				<a href={'http://localhost:8888'}>
 					<button>Connect to Spotify</button>
 				</a>
-				<div>Track: {this.state.music.name}</div>
-				<button onClick={this.getTracks()}>Get Music Returns</button>
+				<div>
+					<table>{this.state.music.map(function (d, idx) {
+						return (<tr>
+							<td key={idx}>{d.image}</td>
+							<td key={idx}>{d.song}</td>
+							<td key={idx}>{d.artist}</td>
+							<td key={idx}>{d.album}</td>
+							<td key={idx}>{d.link}</td>
+						</tr>)
+					})}</table>
+				</div>
 			</div>
-
-
-
 		);
 	}
 }
