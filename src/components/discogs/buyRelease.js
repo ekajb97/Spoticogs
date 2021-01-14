@@ -43,3 +43,28 @@ const buyRelease = ({ album, artists, name }) => {
 }
 
 export default buyRelease;
+
+
+//for (var i = 0; i < response.items.length; i++) {
+//	var song_info = {
+//		song: response.items[i].name,
+//		artist: response.items[i].artists[0].name,
+//		album_name: response.items[i].album.name,
+//		album_art: response.items[i].album.images[0]
+//	}
+//	music[i] = song_info;
+//getDisc()
+// 			 			{
+// 			 				db.search({ release_title: this.state.music.album, artist: this.state.music.artist, type: 'master'})
+// 			 					.then(function (obj) {
+// 			 						console.log(obj)
+// 			 						console.log("Discogs master ID needed for Marketplace Search: " + obj.results[0].master_id)
+// 									this.setState({
+// 										music: {
+// 											id: obj.results[0].master_id
+// 										}
+// 										})
+//
+// 			 					});
+// 			 			}
+//}
