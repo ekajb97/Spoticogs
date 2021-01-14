@@ -3,23 +3,15 @@ import Spotify from 'spotify-web-api-js';
 
 // Using Client Credentials Flow to Authenticate
 var spotifyApi = new Spotify();
-var Discogs = require('disconnect').Client;
-var db = new Discogs({ userToken: 'emQcmnEHCrfaCCcxwTrVFhvEdRckNgIfiImhaGQC' }).database();
 
-function getDisc() {
-
-}
 
 class SpotifyMisc extends React.Component {
-	getDisc;
-
 	constructor() {
 		super();
 		const params = this.getHashParams();
 		this.state = {
 			loggedIn: params.access_token ? true : false,
 			music: []
-			//{ song: "", artist: "", album: "", link: "", image: "" }
 		}
 		if (this.state.loggedIn === true) {
 			spotifyApi.setAccessToken(params.access_token);
@@ -27,22 +19,25 @@ class SpotifyMisc extends React.Component {
 	}
 
 	componentDidMount() {
-		spotifyApi.getMyTopTracks().then((response) => {
-			for (var i = 0; i < response.items.length; i++) {
-				this.setState(
-					{
-						music: [...this.state.music,
+		if (this.state.loggedIn === true) {
+			spotifyApi.getMyTopTracks().then((response) => {
+				for (var i = 0; i < response.items.length; i++) {
+					this.setState(
 						{
-							image: response.items[i].album.images[0].url,
-							song: response.items[i].name,
-							artist: response.items[i].artists[0].name,
-							album: response.items[i].album.name,
-							link: ""
-						}]
-					}
-				)
-			}
-		});
+							music: [...this.state.music,
+							{
+								image: response.items[i].album.images[0].url,
+								song: response.items[i].name,
+								artist: response.items[i].artists[0].name,
+								album: response.items[i].album.name,
+								link: ""
+							}]
+						}
+					)
+				}
+			});
+		}
+
 
 	}
 
