@@ -61,11 +61,16 @@ class SpotifyMisc extends React.Component {
 				<div>
 					<table>{this.state.music.map(function (d, idx) {
 						return (<tr>
-							<td key={idx}>{d.image}</td>
+							<td key={idx}>
+								<img height={100} width={100}
+									 src={d.image}
+									 alt={d.album}>
+								</img>
+							</td>
 							<td key={idx}>{d.song}</td>
 							<td key={idx}>{d.artist}</td>
 							<td key={idx}>{d.album}</td>
-							<td key={idx}>{d.link}</td>
+							<td key={idx}><a href={"https://www.discogs.com/search/?q="+d.album+"&type=release&artist="+d.artist} >Buy Here!</a></td>
 						</tr>)
 					})}</table>
 				</div>
