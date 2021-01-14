@@ -11,6 +11,7 @@ class SpotifyMisc extends React.Component {
 		const params = this.getHashParams();
 		this.state = {
 			loggedIn: params.access_token ? true : false,
+			button:'Connect to Spotify',
 			music: []
 		}
 		if (this.state.loggedIn === true) {
@@ -24,6 +25,7 @@ class SpotifyMisc extends React.Component {
 				for (var i = 0; i < response.items.length; i++) {
 					this.setState(
 						{
+							button: 'Reconnect to Spotify',
 							music: [...this.state.music,
 							{
 								image: response.items[i].album.images[0].url,
@@ -36,6 +38,9 @@ class SpotifyMisc extends React.Component {
 					)
 				}
 			});
+		}
+		else{
+
 		}
 
 
@@ -56,7 +61,7 @@ class SpotifyMisc extends React.Component {
 
 			<div>
 				<a href={'http://localhost:8888'}>
-					<button>Connect to Spotify</button>
+					<button>{this.state.button}</button>
 				</a>
 				<div>
 					<table align="center" class="scrollt">
