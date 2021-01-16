@@ -2,16 +2,25 @@
 <html>
 
 <head>
-  <title>Example of the Authorization Code flow with Spotify</title>
+  <title>Login</title>
   <link rel="stylesheet" href="index.css">
+  <link href='https://fonts.googleapis.com/css?family=Amiko' rel='stylesheet'>
+  
 </head>
 
 <body>
+  <div class="App">
+    <header class="App-header">
+        <img src="logo.png" alt="React Logo" />
+    </header>
+  </div>
+
   <div class="container">
     <div id="login">
-      <h1>Click here to connect to Spotify</h1>
+      <p class="titlep">Click here to connect to Spotify</p>
       <a href="/login" class="btn btn-primary">Connect to Spotify</a>
     </div>
+
     <div id="loggedin">
       <div id="user-profile">
       </div>
@@ -19,9 +28,10 @@
       </div>
       <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
     </div>
-    <p>Would you like fries with that? ;)</p>
+    <p></p>
+    <p>Would you like fries with that? :)</p>
   </div>
-
+<!-- ------------------------------------------------------------------------------------------------------------>
   <script id="user-profile-template" type="text/x-handlebars-template">
       <h1>Logged in as {{display_name}}</h1>
       <div class="media">

@@ -7,14 +7,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 table {
   width: 60%;
 }
+
+#login {
+  padding-top: 70px;
+  text-align: center;
+  font-family: 'Amiko';
+  color: #ffffff;
+}
+
+.titlep {
+  padding-bottom: 20px;
+  font-family: 'Amiko';
+  font-size: 30px;
+}
+
+.container {
+  font-family: 'Amiko';
+  text-align: center;
+  background: #000000;
+  border-radius: 20px;
+  height: 400px;
+  margin: 20px auto 0;
+  width: 600px;
+  color: #696969;
+}
+
 
 #image {
   width:150px;

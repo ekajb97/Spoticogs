@@ -55,14 +55,23 @@ class SpotifyMisc extends React.Component {
 		}
 		return hashParams;
 	}
+	handleShow = ()=>{
+		this.setState({
+			loggedIn: true
+		})
+	}
+
+	handleHide = () =>{
+		this.setState({
+			loggedIn: false
+		})
+	}
 
 	render() {
+		if (this.state.loggedIn) {
 		return (
-
 			<div>
-				<a href={'http://localhost:8888'}>
-					<button>{this.state.button}</button>
-				</a>
+				
 				<div>
 					<table align="center" class="scrollt">
 						<tr >
@@ -92,6 +101,20 @@ class SpotifyMisc extends React.Component {
 				</div>
 			</div>
 		);
+				} else {
+					return (
+						<div>
+						<a href={'http://localhost:8888'}>
+							<button>{this.state.button}</button>
+						</a>
+						<h3>Welcome to Spoticogs!</h3>
+						<h4>This application allows a user to search their top Spotify tracks on the Discogs marketplace</h4>
+						<p></p>
+						<p></p>
+						<p>CS322 Project Demo</p>
+						</div>
+					  );
+				}
 	}
 }
 
