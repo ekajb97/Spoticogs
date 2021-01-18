@@ -30,6 +30,38 @@ body {
   color: #61dafb;
 }
 
+#login {
+  padding-top: 70px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+#mainedit {
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+
+.titlep {
+  padding-bottom: 20px;
+
+  font-size: 30px;
+}
+
+.container {
+
+  text-align: center;
+  background: #000000;
+  border-radius: 20px;
+  height: 420px;
+  margin: 20px auto 0;
+  width: 600px;
+  color: #696969;
+}
+
 button {
   transition: all .4s ease;
   font-family: 'Courier New', monospace;

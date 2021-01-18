@@ -105,14 +105,21 @@ class SpotifyMisc extends React.Component {
 				} else {
 					return (
 						<div>
-						<a href={'http://localhost:8888'}>
-							<button>{this.state.button}</button>
-						</a>
-						<h3>Welcome to Spoticogs!</h3>
-						<h4>This application allows a user to search their top Spotify tracks on the Discogs marketplace</h4>
-						<p></p>
-						<p></p>
-						<p>CS322 Project Demo</p>
+						<div class="container">
+							<div id="mainedit">
+								<h2>Welcome to Spoticogs!</h2>
+								<h4>This application allows a user to search their top 20 Spotify tracks with a direct link to the respective songs on the Discogs Marketplace</h4>
+								<a href={'http://localhost:8888'}>
+									<button>{this.state.button}</button>
+								</a>	
+								<br></br>
+								<p>	Killian Flood</p>
+								<p> Jake Byrne </p>
+								<p> Agata Lanecka </p>
+								<p> Alyssa Simbulan </p>
+								
+							</div>
+						</div>
 						</div>
 					  );
 				}
