@@ -180,11 +180,11 @@ table {
   overflow: auto;
 }
 
-th, td {
+th, td, thead {
   border-bottom: 1px solid rgb(255, 255, 255);
 }
 
-th {
+th, thead {
   color: #1DB954;
 }
 

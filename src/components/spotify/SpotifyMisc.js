@@ -1,5 +1,6 @@
 import React from 'react';
 import Spotify from 'spotify-web-api-js';
+import { loginUrl, getTokenFromUrl} from './spotifyAuth';
 
 // Using Client Credentials Flow to Authenticate
 var spotifyApi = new Spotify();
@@ -8,7 +9,7 @@ var spotifyApi = new Spotify();
 class SpotifyMisc extends React.Component {
 	constructor() {
 		super();
-		const params = this.getHashParams();
+		const params = getTokenFromUrl();
 		this.state = {
 			loggedIn: params.access_token ? true : false,
 			button:'Connect to Spotify',
@@ -46,15 +47,6 @@ class SpotifyMisc extends React.Component {
 
 	}
 
-	getHashParams() {
-		var hashParams = {};
-		var e, r = /([^&;=]+)=?([^&;]*)/g,
-			q = window.location.hash.substring(1);
-		while (e = r.exec(q)) {
-			hashParams[e[1]] = decodeURIComponent(e[2]);
-		}
-		return hashParams;
-	}
 	handleShow = ()=>{
 		this.setState({
 			loggedIn: true
@@ -71,7 +63,7 @@ class SpotifyMisc extends React.Component {
 		if (this.state.loggedIn) {
 		return (
 			<div>
-				
+
 				<div>
 					<table align="center" class="scrollt">
 						<tr >
@@ -109,15 +101,15 @@ class SpotifyMisc extends React.Component {
 							<div id="mainedit">
 								<h2>Welcome to Spoticogs!</h2>
 								<h4>This application allows a user to search their top 20 Spotify tracks with a direct link to the respective songs on the Discogs Marketplace</h4>
-								<a href={'http://localhost:8888'}>
+								<a href={loginUrl}>
 									<button>{this.state.button}</button>
-								</a>	
+								</a>
 								<br></br>
 								<p>	Killian Flood</p>
 								<p> Jake Byrne </p>
 								<p> Agata Lanecka </p>
 								<p> Alyssa Simbulan </p>
-								
+
 							</div>
 						</div>
 						</div>
