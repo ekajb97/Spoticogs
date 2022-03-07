@@ -1,3 +1,11 @@
+# ![Spoticogs](https://github.com/ekajb97/Spoticogs/blob/master/src/images/logo.png)
+Spoticogs is a web application that allows users to buy muisc albums from Discogs by accessing their top listened to songs from their Spotify accounts. This resulted in the name "Spoticogs" being a combination of Spotify and Discogs.
+
+This project was created by Agata Lanecka, Alyssa Simbulan, Jake Byrne and Killian Flood, as a part of our CS322 Music Programming module.
+
+
+
+
 # Running Spoticogs
 - Enter auth-server
 - Enter secret id (line 16)
@@ -43,11 +51,5 @@ More info [here](https://developer.spotify.com/documentation/general/guides/scop
 Read access to a user's top artists and tracks.
 More info [here](https://developer.spotify.com/documentation/general/guides/scopes/#user-top-read).
 
-# TODO
-## Spotify
-- Redirect to main app with access token once the user has authenticated with
-Spotify and granted permission to Spoticogs.
-- Query for users top tracks & artists.
-- Return query in useable format for Discogs. 
 
 
