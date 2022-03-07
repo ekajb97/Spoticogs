@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Test from './components/discogs/test';
 import SpotifyMisc from "./components/spotify/SpotifyMisc";
 import Buy from './components/discogs/buyRelease';
 

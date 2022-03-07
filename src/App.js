@@ -1,7 +1,7 @@
 import './App.css';
-import SpotifyMisc from './components/spotify/SpotifyMisc';
+import SpotifyMisc from "./components/spotify/SpotifyMisc";
 import React from "react";
-
+import  { getTokenFromUrl} from "./components/spotify/spotifyAuth";
 import ReactLogo from './images/logo.png';
 
 
@@ -16,9 +16,12 @@ export default class App extends React.Component {
 
 
     render() {
+
         return (
+
             <div className="App">
                 <header className="App-header">
+
                     <img src={ReactLogo} alt="React Logo" />
                 </header>
                 <div>
